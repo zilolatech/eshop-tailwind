@@ -1,0 +1,45 @@
+{/* <section>
+            <img src="eshop-images/headwear.jpg" alt="headwear" width="200" />
+            <div class="product-info">
+                <div>
+                    <h3>Title</h3>
+                    <div class="price">$ Price</div>
+                </div>
+                <button onClick={() => navigate('/form')} class="buy">Buy</button>
+                <button class="delete">Delete from Cart</button>
+            </div>
+        </section>
+        <section>
+            <img src="eshop-images/bag.jpg" alt="sakuraChibi" width="200" />
+            <div class="product-info">
+                <div>
+                    <h3>Title</h3>
+                    <div class="price">$ Price</div>
+                </div>
+                <button onClick={() => navigate('/form')} class="buy">Buy</button>
+                <button class="delete">Delete from Cart</button>
+            </div>
+        </section>
+        <section>
+            <img src="eshop-images/mugs.jpg" alt="xiao" width="200" />
+            <div class="product-info">
+                <div>
+                    <h3>Title</h3>
+                    <div class="price">$ Price</div>
+                </div>
+                <button onClick={() => navigate('/form')} class="buy">Buy</button>
+                <button class="delete">Delete from Cart</button>
+            </div>
+        </section>
+        <section>
+            <img src="eshop-images/pin.png" alt="thoma" width="200" />
+            <div class="product-info">
+                <div>
+                    <h3>Title</h3>
+                    <div class="price">$ Price</div>
+                </div>
+                <button onClick={() => navigate('/form')} class="buy">Buy</button>
+                <button class="delete">Delete from Cart</button>
+            </div>
+        </section>
+        <button onClick={() => navigate('/form')} id="buy-all">Buy All in the Cart</button> */}

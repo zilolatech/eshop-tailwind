@@ -1,0 +1,41 @@
+import React, { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { CartContext } from '../App'
+
+
+const ProductsInCart = () => {
+  const {cart, setCart} = useContext(CartContext)
+
+  const deleteItem = (item) => {
+    setCart(cart.filter((cartItem) => cartItem.id != item.id))
+  }
+
+  const navigate = useNavigate()
+
+  return (
+    <main id='cartLayout' className='flex flex-wrap m-5 min-h-[80vh] md:mx-48 md:my-5 place-content-start' >
+        {cart.map((product) => (
+          <section className='flex basis-full my-2 md:my-3' key={product.id}>
+              <img className='rounded max-h-[150px]' src={`/eshop-images/${product.img}`} alt="headwear" width="100" />
+              <div className='pl-4 w-full'>
+                  <div>
+                      <h3 className='text-xl md:text-2xl'>{product.title}</h3>
+                      <div className="price">$ {product.price}</div>
+                  </div>
+                  <div className='flex float-right'>
+                    <button className='bg-amber-300 rounded m-1 p-2 w-20' onClick={() => navigate('/form')}><p className='block'>Buy</p></button>
+                    <button className='bg-cyan-900 rounded m-1 p-2 text-white' onClick={() => deleteItem(product)}>
+                      <p className='hidden md:inline-block'>Delete from Cart</p>
+                      <img className='md:hidden' src='icons/delete.svg' width='18px' />
+                    </button>
+                  </div>
+              </div>
+          </section>
+          )) }
+
+      {cart.length > 0 ? (<button className='mx-auto mt-5 bg-cyan-900 text-white p-1 px-3 md:p-3 rounded' onClick={() => navigate('/form')} id="buy-all">Buy All in the Cart</button>) : (<p className='mx-auto text-2xl md:text-3xl text-gray-400'>Cart is empty</p>)}
+    </main>
+  )
+}
+
+export default ProductsInCart

@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Headwear",
+        "price": "11.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "headwear.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Bag",
+        "price": "2.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "bag.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Mug",
+        "price": "4.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "mugs.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Pin",
+        "price": "0.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "pin.png"
+    },
+    {
+        "id": "5",
+        "title": "T-Shirt",
+        "price": "4.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "t-shirt.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Hoodie",
+        "price": "7.99",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Expedita quia molestiae dolores? Itaque at incidunt blanditiis consequatur magnam quas pariatur, quod aspernatur culpa in unde impedit veniam corrupti! Error, temporibus.",
+        "img": "hoodie.jpg"
+    }
+]

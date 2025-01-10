@@ -1,8 +1,7 @@
 import products from '../products.json'
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Product from './Product'
 import LayoutBtn from './LayoutBtn'
-import NavigationBtn from './NavigationBtn'
 
 const Products = ({searchValue}) => {
   const [layout, setLayout] = useState('grid')

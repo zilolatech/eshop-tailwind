@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../App'
-import SearchBar from './SearchBar'
 
 const Header = ({searchValue, onSearch}) => {
   const {cart} = useContext(CartContext)
@@ -18,8 +17,6 @@ const Header = ({searchValue, onSearch}) => {
         
         <div className={`md:inline-block hidden p-2.5 ${isActive('/') ? 'bg-cyan-950' : 'hover:bg-cyan-800'}`}><Link to='/' className='no-underline text-white'>Home</Link></div>
         <div className={`md:inline-block hidden p-2.5 ${isActive('/termsandconditions') ? 'bg-cyan-950' : 'hover:bg-cyan-800'}`}><Link className='no-underline text-white' to='/termsandconditions'>Terms&Conditions</Link></div>
-
-        {/* <div className='inline-block max-w-[60%] place-content-around'><input className='max-w-full text-black' /></div> */}
 
         <div className={`inline-block float-right p-2.5 ${isActive('/cart') ? 'bg-cyan-950' : 'hover:bg-cyan-800'}`}>
             <Link className='no-underline text-white' to='/cart'>

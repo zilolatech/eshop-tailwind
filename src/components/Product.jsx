@@ -1,9 +1,10 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../App'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Product = ({product, layout}) => {
   const {cart, setCart} = useContext(CartContext)
+  const navigate = useNavigate()
 
   
   const addToCart = (item) => {
@@ -12,8 +13,7 @@ const Product = ({product, layout}) => {
     if (!itemExist) {
       setCart([...cart, item])
     } else {
-      alert('This item is already in the cart!')
-      return
+      navigate('/cart')
     }
   }
 
@@ -32,9 +32,10 @@ const Product = ({product, layout}) => {
                 {layout == 'list' && <p className='md:hidden'>{product.description.substring(0, 80) + '...'}</p>}
               </div>
             </Link>
-            <button className={`md:h-[20%] float-right md:m-0 rounded md:w-32 md:bg-amber-300 ${layout == 'list' ? 'float-right' : 'm-3'}`} onClick={() => {addToCart(product)}}>
+            
+            <button className={`md:h-[20%] float-right md:m-0 rounded md:w-32 md:bg-amber-300 ${isInCart(product) && 'md:bg-cyan-800 md:text-white'} ${layout == 'list' ? 'float-right' : 'm-3'}`} onClick={() => {addToCart(product)}}>
               <img className='md:hidden' src={isInCart(product) ? 'icons/cart-check.svg' :'icons/cart-plus.svg'} width='30px' />
-              <p className='hidden md:block'>Add to Cart</p>
+              <p className='hidden md:block'>{isInCart(product) ? 'Already in Cart' : 'Add to Cart'}</p>
             </button>
         </div>
     </section>

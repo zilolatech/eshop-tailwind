@@ -17,7 +17,9 @@ const Product = ({product, layout}) => {
     }
   }
 
-  const isInCart = (item) => cart.includes(item)
+  const isInCart = (item) => {
+    return cart.some(cartItem => cartItem.id === item.id)
+  }
   
   
   return (

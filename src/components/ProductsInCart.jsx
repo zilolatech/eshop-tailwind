@@ -24,22 +24,24 @@ const ProductsInCart = () => {
           <section className='flex basis-full my-2 md:my-3' key={product.id}>
               <img className='rounded max-h-[150px]' src={`/eshop-images/${product.img}`} alt="headwear" width="100" />
               <div className='pl-4 w-full'>
-                  <div>
+                  <div className='inline-block'>
                       <h3 className='text-xl md:text-2xl'>{product.title}</h3>
                       <div className="price">$ {Math.round(product.price * product.quantity * 100) / 100}</div>
                   </div>
-                  <div className='flex float-right'>
-                    <div className='flex'>
-                      <button onClick={() => updateQuantity(product, product.quantity - 1)} disabled={product.quantity <= 1}>-</button>
-                      <p>{product.quantity}</p>
-                      <button onClick={() => updateQuantity(product, product.quantity + 1)}>+</button>
-                    </div>
 
-                    <button className='bg-amber-300 rounded m-1 p-2 w-20' onClick={() => navigate('/form')}><p className='block'>Buy</p></button>
-                    <button className='bg-cyan-900 rounded m-1 p-2 text-white' onClick={() => deleteItem(product)}>
-                      <p className='hidden md:inline-block'>Delete from Cart</p>
-                      <img className='md:hidden' src='icons/delete.svg' width='18px' />
-                    </button>
+                  <div className='flex flex-col float-right'>
+                    <div className='flex border rounded mx-14'>
+                      <button className='mx-3 text-3xl' onClick={() => updateQuantity(product, product.quantity - 1)} disabled={product.quantity <= 1}>-</button>
+                      <p className='mx-4'>{product.quantity}</p>
+                      <button className='mx-3 text-3xl' onClick={() => updateQuantity(product, product.quantity + 1)}>+</button>
+                    </div>
+                    <div>
+                      <button className='bg-amber-300 rounded m-1 p-2 w-20' onClick={() => navigate('/form')}><p className='block'>Buy</p></button>
+                      <button className='bg-cyan-900 rounded m-1 p-2 text-white' onClick={() => deleteItem(product)}>
+                        <p className='hidden md:inline-block'>Delete from Cart</p>
+                        <img className='md:hidden' src='icons/delete.svg' width='18px' />
+                      </button>
+                    </div>
                   </div>
               </div>
           </section>

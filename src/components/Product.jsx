@@ -11,7 +11,7 @@ const Product = ({product, layout}) => {
     const itemExist = cart.some(cartItem => cartItem.id === item.id)
 
     if (!itemExist) {
-      setCart([...cart, item])
+      setCart([...cart, {...item, quantity: 1}])
     } else {
       navigate('/cart')
     }

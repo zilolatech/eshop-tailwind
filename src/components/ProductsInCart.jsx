@@ -6,11 +6,17 @@ import { CartContext } from '../App'
 const ProductsInCart = () => {
   const {cart, setCart} = useContext(CartContext)
 
+  const navigate = useNavigate()
+
   const deleteItem = (item) => {
     setCart(cart.filter((cartItem) => cartItem.id != item.id))
   }
 
-  const navigate = useNavigate()
+  const updateQuantity = (item, quantity) => {
+    if (quantity < 1) return
+    setCart(cart.map((cartItem) => cartItem.id === item.id ? {...cartItem, quantity} : cartItem))
+
+  }  
 
   return (
     <main id='cartLayout' className='flex flex-wrap m-5 min-h-[80vh] md:mx-48 md:my-5 place-content-start' >
@@ -20,9 +26,15 @@ const ProductsInCart = () => {
               <div className='pl-4 w-full'>
                   <div>
                       <h3 className='text-xl md:text-2xl'>{product.title}</h3>
-                      <div className="price">$ {product.price}</div>
+                      <div className="price">$ {Math.round(product.price * product.quantity * 100) / 100}</div>
                   </div>
                   <div className='flex float-right'>
+                    <div className='flex'>
+                      <button onClick={() => updateQuantity(product, product.quantity - 1)} disabled={product.quantity <= 1}>-</button>
+                      <p>{product.quantity}</p>
+                      <button onClick={() => updateQuantity(product, product.quantity + 1)}>+</button>
+                    </div>
+
                     <button className='bg-amber-300 rounded m-1 p-2 w-20' onClick={() => navigate('/form')}><p className='block'>Buy</p></button>
                     <button className='bg-cyan-900 rounded m-1 p-2 text-white' onClick={() => deleteItem(product)}>
                       <p className='hidden md:inline-block'>Delete from Cart</p>

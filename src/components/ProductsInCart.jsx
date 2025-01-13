@@ -30,16 +30,16 @@ const ProductsInCart = () => {
                   </div>
 
                   <div className='flex flex-col float-right'>
-                    <div className='flex border rounded mx-14'>
-                      <button className='mx-3 text-3xl' onClick={() => updateQuantity(product, product.quantity - 1)} disabled={product.quantity <= 1}>-</button>
-                      <p className='mx-4'>{product.quantity}</p>
-                      <button className='mx-3 text-3xl' onClick={() => updateQuantity(product, product.quantity + 1)}>+</button>
+                    <div className='flex border rounded mr-1 ml-8 md:ml-4'>
+                      <button className={`mx-3 text-2xl ${product.quantity <= 1 && 'text-gray-400'}`} onClick={() => updateQuantity(product, product.quantity - 1)} disabled={product.quantity <= 1}>-</button>
+                      <p className='mx-1 md:mx-2 mt-1 md:text-xl'>{product.quantity}</p>
+                      <button className={`${product.quantity <= 9 && 'ml-4'} mx-2 text-2xl`} onClick={() => updateQuantity(product, product.quantity + 1)}>+</button>
                     </div>
-                    <div>
+                    <div className='mt-1'>
                       <button className='bg-amber-300 rounded m-1 p-2 w-20' onClick={() => navigate('/form')}><p className='block'>Buy</p></button>
                       <button className='bg-cyan-900 rounded m-1 p-2 text-white' onClick={() => deleteItem(product)}>
-                        <p className='hidden md:inline-block'>Delete from Cart</p>
-                        <img className='md:hidden' src='icons/delete.svg' width='18px' />
+                        {/* <p className='hidden md:inline-block'>Delete from Cart</p> */}
+                        <img className='inline-block' src='icons/delete.svg' width='18px' />
                       </button>
                     </div>
                   </div>

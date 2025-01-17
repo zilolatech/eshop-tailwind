@@ -28,7 +28,7 @@ const Header = ({searchValue, onSearch}) => {
        
 
         <div className={`hidden absolute m-2 left-1/2 top-0 -translate-x-1/2 p-0.5 pl-2 bg-white rounded w-[50%] ${isActive('/') ? 'md:flex' : ''}`}>
-          <input className='inline-block bg-white text-black w-[90%] flex-auto' placeholder='Search' defaultValue={searchValue} onChange={(e) => onSearch(e.target.value)} />
+          <input className='inline-block bg-white text-black w-[90%] flex-auto outline-none' placeholder='Search' defaultValue={searchValue} onChange={(e) => onSearch(e.target.value)} />
           <button className='px-2 float-right flex-auto'><img className='inline-block' src='icons/search.svg' width='25px' /></button>
         </div>
 
@@ -47,7 +47,7 @@ const Header = ({searchValue, onSearch}) => {
 
         <div className={`flex mx-3 p-1 max-h-10 bg-white rounded border border-slate-600 ${isActive('/') ? 'md:hidden' : 'hidden'} `}>
           <img className='inline-block flex-auto' src='icons/search.svg' width='20px' />
-          <input className='block text-black flex-auto w-[90%]' placeholder='Search' defaultValue={searchValue} onChange={(e) => onSearch(e.target.value)} />
+          <input className='block text-black flex-auto w-[90%] outline-none' placeholder='Search' defaultValue={searchValue} onChange={(e) => onSearch(e.target.value)} />
         </div>
     </header>
     

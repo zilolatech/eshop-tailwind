@@ -15,8 +15,7 @@ const ProductFullINfo = () => {
     if (!itemExist) {
       setCart([...cart, item])
     } else {
-      alert('This item is already in the cart!')
-      return
+      navigate('/cart')
     }
   }
 
@@ -47,7 +46,7 @@ const ProductFullINfo = () => {
                 <p className='inline-block line-through text-xl text-gray-500'>$ {(product.price * 1.3).toFixed(2)}</p><span className='bg-black rounded text-white px-1 ml-3'>-30%</span>
 
                 <div className='md:mt-[35%]'>
-                    <button className={`inline-block p-2 md:m-0 rounded w-[45%] bg-amber-300`} onClick={() => {addToCart(product)}}><p className='block'>Add to Cart</p></button>
+                    <button className={`inline-block p-2 md:m-0 rounded w-[45%] bg-amber-300 ${isInCart(product) && 'md:bg-cyan-800 md:text-white'}`} onClick={() => {addToCart(product)}}><p className='block'>{isInCart(product) ? 'Already in Cart' : 'Add to Cart'}</p></button>
                     <button className='inline-block bg-cyan-900 rounded m-3 p-2 w-[45%]' onClick={() => navigate('/form')}><p className='block text-white'>Buy</p></button>
                 </div>
             </div>
